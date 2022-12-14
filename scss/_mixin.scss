@@ -1,0 +1,24 @@
+@mixin ClearList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+@mixin TextStyles {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #666666;
+}
+
+@mixin TitleStyles--h2 {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 100%;
+}
+
+@mixin TitleStyles--mobile {
+    margin-bottom: calc($offset / 2);
+    font-size: 30px;
+    line-height: 100%;
+}

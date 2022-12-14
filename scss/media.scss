@@ -1,0 +1,177 @@
+@import "_common.scss";
+
+
+@media (max-width:992px) {
+    .hero__title {
+        font-size: 50px;
+    }
+
+    .advantages__card {
+        flex-direction: column;
+    }
+
+    .advantages {    
+        .card__image {
+            width: 80px;
+            height: 80px;
+            margin-right: 0;
+        }
+    }
+
+    .teachers {
+        .article {
+            &__image {
+                width: 100%;
+            }
+        }
+    }
+
+    .courses {
+        .article {
+            &__data-container {
+                height: 376px;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+
+    .header {
+        &__logo-container {
+            display: flex;
+        }
+    }
+
+    .hero {
+
+        &__text-container {
+            padding: 77px 0;
+        }
+
+        &__image-container {
+            display: none;
+        }
+    }
+
+    .courses {
+        .article {
+            &__data-container {
+                height: 573px;
+            }
+
+            &__button {
+                padding: 20px 48px;
+                width: 180px;
+            }
+
+            &__image {
+                height: 140px;
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    
+    .container {
+        padding: calc($offset / 2);
+    }
+    
+    .header {
+
+        &__nav {
+            width: 50%;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        &__logo-container {
+            width: 50%;
+        }
+        
+        &__container {
+            margin-bottom: 0;
+            padding: $offset calc($offset / 2);;
+        }
+
+        .nav__list {
+            display: none;
+        }
+
+        .row {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .burger {
+            display: block;
+        }
+    }
+
+    .hero {
+        
+        height: 433px;
+
+        &__text-container {
+            padding: $mobileVerticalPadding calc($offset / 2);
+        }
+
+        &__title {
+            @include TitleStyles--mobile;
+            width: 50%;
+        }
+
+        &__descr {
+            margin-bottom: 50px;
+        }
+    }
+
+    .advantages {
+
+        padding: $mobileVerticalPadding calc($offset / 2);
+
+        &__image  {
+            display: none;
+        }
+
+        &__card {
+            flex-direction: row;
+        }
+
+        &__title {
+            @include TitleStyles--mobile;
+        }
+
+        .card {
+            &__image {
+                margin-right: 30px;
+            }
+        }
+    }
+
+    .teachers {
+
+        padding: $mobileVerticalPadding calc($offset / 2);
+
+        &__title  {
+            @include TitleStyles--mobile;
+        }
+    }
+
+    .courses {
+
+        padding: $mobileVerticalPadding calc($offset / 2);
+        
+        &__title  {
+            @include TitleStyles--mobile;
+        }
+        .article {
+            &__data-container {
+                height: 473px;
+            }
+        }
+    }
+}

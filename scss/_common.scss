@@ -1,0 +1,284 @@
+@import "_mixin.scss";
+@import "_variables.scss";
+
+@font-face {
+    font-family: "Roboto";
+    src: url(../fonts/Roboto-Medium.ttf);
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url(../fonts/Roboto-Bold.ttf);
+    font-weight: 700;
+}
+
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+}
+
+a, a:visited {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+h1, h2, h3 {
+    margin: 0;
+}
+
+p {
+    margin: 0;
+}
+
+button {
+    background-color: $buttonBackgroundColor;
+    border: none;
+    border-radius: $borderRadius;
+    padding: 24px 75px;
+    color: white;
+}
+
+
+.header {
+    background-color: $headerBackgroundColor;
+    &__container {
+        padding: $offset 0;
+        margin-bottom: $offset;
+    }
+
+    .burger {
+        display: none;
+        position: relative;
+        height: 17px;
+        width: 21px;
+
+        &__line {
+            position: absolute;
+            height: 3px;
+            width: 100%;
+            background-color: white;
+        }
+
+        &__line:nth-child(2) {
+            top: 7px
+        }
+
+        &__line:nth-child(3) {
+            top: 14px
+        }
+    }
+
+
+    .nav {
+        &__list {
+            @include ClearList;
+            display: flex;  
+        }
+    
+        &__item:not(:last-child) {
+            margin-right: 56px;
+        }
+    
+        &__href {
+            font-size: 18px;
+            line-height: 21px;
+            color: white;
+        }
+    }
+}
+
+.hero {
+    background-image: url("../img/hero/background.png");
+    background-size: cover;
+    height: 665px;
+    color: white;
+
+    &__image-container {
+        display: flex;
+    }
+
+    &__text-container {
+        padding: 130px 0;
+    }
+
+
+    &__title {
+        font-weight: 700;
+        font-size: 60px;
+        line-height: 100%;
+        margin-bottom: $offset;
+    }
+
+    &__descr {
+        font-size: 18px;
+        line-height: 150%;
+        margin-bottom: 70px;
+    }
+
+    &__image {
+        align-self: center;
+    }
+}
+
+.advantages {
+    padding: $sectionPadding 0;
+
+    &__main-info {
+        display: flex;
+        max-width: 775px;
+        margin-bottom: $offset;
+    }
+
+    &__image {
+        margin-right: $offset;
+        object-fit: contain;
+    }
+
+    &__title {
+        @include TitleStyles--h2;
+        margin-bottom: $offset;
+        color: $darkColor
+    }
+
+    &__descr {
+        @include TextStyles;
+        color: $normalGray
+    }
+    
+    &__card {
+        display: flex;
+    };
+
+    .card {
+        &__image {
+            margin-right: $offset;
+            width: 80px;
+            height: 80px;
+        };
+
+        &__descr {
+            padding: 16px 0;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 120%;
+            color: $normalGray
+        }
+    }    
+}
+
+.teachers {
+    background-color: $darkColor;
+    padding: $sectionPadding 0;
+    
+    &__title {
+        @include TitleStyles--h2;
+        color: white;
+        margin-bottom: $offset;
+    }
+    
+    .article {
+        &__image {
+            margin-bottom: $offset;
+            border-radius: $borderRadius $borderRadius 0px 0px;
+        };
+
+        &__title {
+            margin-bottom: calc($offset / 2);
+            color: white;
+        };
+
+        &__descr {
+            color: $lightGray; 
+        }
+    }   
+}
+
+.courses {
+
+    padding: $sectionPadding 0;
+
+    &__title {
+        @include TitleStyles--h2;
+        color: $darkColor;
+        margin-bottom: $offset;
+    }
+
+    &__article {
+        position: relative;
+    }
+
+    &__time-container {
+        position: absolute;
+        display: flex;
+        top: 12px;
+        right: calc($offset / 2 + 4px);
+    }
+
+    &__time--image {
+        margin-right: 7px;
+    }
+
+    &__time--text {
+        font-size: 16px;
+        line-height: 19px;
+        color: white;
+        align-self: center;
+    }
+
+    .article {
+        &__container {
+            border-radius: $borderRadius;
+            background-color: $coursesAticleBackground;
+            
+        }
+
+        &__data-container {
+            padding: 0 $offset $offset $offset;
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        &__image {
+            margin-bottom: $offset;
+            border-radius: $borderRadius $borderRadius 0 0;
+        }
+
+        &__title {
+            margin-bottom: calc($offset / 2);
+        }
+        &__descr {
+            @include TextStyles;
+            color: $normalGray;
+            margin-bottom: auto;
+        }
+
+        &__button {
+            padding: 20px 60px;
+            width: 202px;
+        }
+    }   
+}
+
+
+.footer {
+    padding: $offset 0;
+    background-color: $darkColor;
+
+    &__container {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    &__href:not(:last-child) {
+        margin-right: $offset;
+    }
+}
